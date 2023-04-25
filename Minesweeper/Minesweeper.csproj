@@ -1,0 +1,96 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net7.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<UseWindowsForms>true</UseWindowsForms>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Title>Minesweeper</Title>
+		<Authors>Manuel Klär. Max Mitterböck</Authors>
+		<PlatformTarget>x64</PlatformTarget>
+		<Copyright>Manuel Klär, Max Mitterböck</Copyright>
+		<PackageTags>game,minesweeper,windows,forms,modern,ui,C#,german,english,themes</PackageTags>
+		<Description>A small and simple minesweeper game written using Windows Forms</Description>
+		<Company>HTL Neufelden</Company>
+		<NeutralLanguage>en-US</NeutralLanguage>
+		<AssemblyVersion>1.0.0</AssemblyVersion>
+		<FileVersion>1.0.0</FileVersion>
+		<ApplicationIcon>minesweeper.ico</ApplicationIcon>
+		<GenerateDocumentationFile>False</GenerateDocumentationFile>
+		<PackageIcon>minesweeper.png</PackageIcon>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+	  <DebugType>embedded</DebugType>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+	  <DebugType>embedded</DebugType>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Content Include="minesweeper.ico" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Include="..\Images\minesweeper.png">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="Properties\Languages\de_DE.Designer.cs">
+		  <DesignTime>True</DesignTime>
+		  <AutoGen>True</AutoGen>
+		  <DependentUpon>de_DE.resx</DependentUpon>
+		</Compile>
+		<Compile Update="Properties\Languages\en_US.Designer.cs">
+		  <DesignTime>True</DesignTime>
+		  <AutoGen>True</AutoGen>
+		  <DependentUpon>en_US.resx</DependentUpon>
+		</Compile>
+		<Compile Update="Properties\Resources.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Resources.resx</DependentUpon>
+		</Compile>
+		<Compile Update="Properties\Settings.Designer.cs">
+			<DesignTimeSharedInput>True</DesignTimeSharedInput>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Settings.settings</DependentUpon>
+		</Compile>
+		<Compile Update="Properties\Statistics.Designer.cs">
+		  <DesignTimeSharedInput>True</DesignTimeSharedInput>
+		  <AutoGen>True</AutoGen>
+		  <DependentUpon>Statistics.settings</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Update="Properties\Languages\de_DE.resx">
+		  <Generator>ResXFileCodeGenerator</Generator>
+		  <LastGenOutput>de_DE.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Properties\Languages\en_US.resx">
+		  <Generator>ResXFileCodeGenerator</Generator>
+		  <LastGenOutput>en_US.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Properties\Resources.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>Resources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="Properties\Settings.settings">
+			<Generator>PublicSettingsSingleFileGenerator</Generator>
+			<LastGenOutput>Settings.Designer.cs</LastGenOutput>
+		</None>
+		<None Update="Properties\Statistics.settings">
+		  <Generator>PublicSettingsSingleFileGenerator</Generator>
+		  <LastGenOutput>Statistics.Designer.cs</LastGenOutput>
+		</None>
+	</ItemGroup>
+</Project>

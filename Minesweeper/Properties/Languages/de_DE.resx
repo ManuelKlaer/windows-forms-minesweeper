@@ -1,0 +1,436 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AppConfirmButton" xml:space="preserve">
+    <value>✓</value>
+  </data>
+  <data name="AppConfirmExitText" xml:space="preserve">
+    <value>Es läuft gerade ein Spiel. Möchten Sie wirklich das Spiel verlassen?</value>
+  </data>
+  <data name="AppConfirmExitTitle" xml:space="preserve">
+    <value>Beenden</value>
+  </data>
+  <data name="AppConfirmNewGameText" xml:space="preserve">
+    <value>Es läuft gerade ein Spiel. Willst du wirklich ein neues Spielfeld erstellen?</value>
+  </data>
+  <data name="AppConfirmNewGameTitle" xml:space="preserve">
+    <value>Neues Spielfeld erstellen</value>
+  </data>
+  <data name="AppCopyright" xml:space="preserve">
+    <value>© Manuel Klär
+© Max Mitterböck</value>
+  </data>
+  <data name="AppEmoji" xml:space="preserve">
+    <value>💣</value>
+  </data>
+  <data name="AppNextButton" xml:space="preserve">
+    <value>&gt;</value>
+  </data>
+  <data name="AppPreviousButton" xml:space="preserve">
+    <value>&lt;</value>
+  </data>
+  <data name="AppProgressText" xml:space="preserve">
+    <value>{0} / {1}</value>
+  </data>
+  <data name="AppProgressTextEmoji" xml:space="preserve">
+    <value>{0} {1} / {2}</value>
+  </data>
+  <data name="AppTextEmoji" xml:space="preserve">
+    <value>{0} {1}</value>
+  </data>
+  <data name="AppTitle" xml:space="preserve">
+    <value>Minesweeper</value>
+  </data>
+  <data name="AppTitleAbout" xml:space="preserve">
+    <value>Über</value>
+  </data>
+  <data name="AppTitleCustomGame" xml:space="preserve">
+    <value>Benutzerdefiniert</value>
+  </data>
+  <data name="AppTitleEndResult" xml:space="preserve">
+    <value>Endergebniss</value>
+  </data>
+  <data name="AppTitleSettings" xml:space="preserve">
+    <value>Einstellungen</value>
+  </data>
+  <data name="AppTitleStatistics" xml:space="preserve">
+    <value>Statistiken</value>
+  </data>
+  <data name="AppTitleTutorial" xml:space="preserve">
+    <value>Wie wird gespielt?</value>
+  </data>
+  <data name="AppTitleWelcome" xml:space="preserve">
+    <value>Willkommen zu {0}</value>
+  </data>
+  <data name="CustomHeight" xml:space="preserve">
+    <value>Höhe</value>
+  </data>
+  <data name="CustomHints" xml:space="preserve">
+    <value>Tipps</value>
+  </data>
+  <data name="CustomMines" xml:space="preserve">
+    <value>Minen</value>
+  </data>
+  <data name="CustomWidth" xml:space="preserve">
+    <value>Breite</value>
+  </data>
+  <data name="EmojiBoard" xml:space="preserve">
+    <value>⊞</value>
+  </data>
+  <data name="EmojiBomb" xml:space="preserve">
+    <value>💣</value>
+  </data>
+  <data name="EmojiClock" xml:space="preserve">
+    <value>🕑</value>
+  </data>
+  <data name="EmojiFlag" xml:space="preserve">
+    <value>⚑</value>
+  </data>
+  <data name="EmojiHappy" xml:space="preserve">
+    <value>:)</value>
+  </data>
+  <data name="EmojiKeyboard" xml:space="preserve">
+    <value>⌨</value>
+  </data>
+  <data name="EmojiLightBulb" xml:space="preserve">
+    <value>💡</value>
+  </data>
+  <data name="EmojiPartyPopper" xml:space="preserve">
+    <value>🎉</value>
+  </data>
+  <data name="EmojiPause" xml:space="preserve">
+    <value>II</value>
+  </data>
+  <data name="EmojiPerformance" xml:space="preserve">
+    <value>📈</value>
+  </data>
+  <data name="EmojiPlay" xml:space="preserve">
+    <value>▷</value>
+  </data>
+  <data name="EmojiQuestion" xml:space="preserve">
+    <value>?</value>
+  </data>
+  <data name="EmojiStop" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EmojiSwords" xml:space="preserve">
+    <value>⚔</value>
+  </data>
+  <data name="GameLost" xml:space="preserve">
+    <value>Verloren</value>
+  </data>
+  <data name="GameWon" xml:space="preserve">
+    <value>Gewonnen</value>
+  </data>
+  <data name="MenuAbout" xml:space="preserve">
+    <value>Über</value>
+  </data>
+  <data name="MenuExit" xml:space="preserve">
+    <value>Beenden</value>
+  </data>
+  <data name="MenuGame" xml:space="preserve">
+    <value>Spiel</value>
+  </data>
+  <data name="MenuHelp" xml:space="preserve">
+    <value>Hilfe</value>
+  </data>
+  <data name="MenuLoad" xml:space="preserve">
+    <value>Laden</value>
+  </data>
+  <data name="MenuNew" xml:space="preserve">
+    <value>Neu</value>
+  </data>
+  <data name="MenuSave" xml:space="preserve">
+    <value>Speichern</value>
+  </data>
+  <data name="MenuSettings" xml:space="preserve">
+    <value>Einstellungen</value>
+  </data>
+  <data name="MenuStatistics" xml:space="preserve">
+    <value>Statistiken</value>
+  </data>
+  <data name="MenuTutorial" xml:space="preserve">
+    <value>Tutorial</value>
+  </data>
+  <data name="PresetBeginner" xml:space="preserve">
+    <value>Anfänger</value>
+  </data>
+  <data name="PresetCustom" xml:space="preserve">
+    <value>Benutzerdefiniert</value>
+  </data>
+  <data name="PresetExpert" xml:space="preserve">
+    <value>Experte</value>
+  </data>
+  <data name="PresetIntermediate" xml:space="preserve">
+    <value>Fortgeschritten</value>
+  </data>
+  <data name="PresetMini" xml:space="preserve">
+    <value>Klein</value>
+  </data>
+  <data name="SettingsAccentColor" xml:space="preserve">
+    <value>Akzentfarbe:</value>
+  </data>
+  <data name="SettingsBackgroundColor" xml:space="preserve">
+    <value>Hintergrundfarbe:</value>
+  </data>
+  <data name="SettingsButtonReset" xml:space="preserve">
+    <value>Zurücksetzen</value>
+  </data>
+  <data name="SettingsButtonShow" xml:space="preserve">
+    <value>Öffnen</value>
+  </data>
+  <data name="SettingsCategoryApp" xml:space="preserve">
+    <value>Applikation</value>
+  </data>
+  <data name="SettingsCategoryGame" xml:space="preserve">
+    <value>Spiel</value>
+  </data>
+  <data name="SettingsCategoryUI" xml:space="preserve">
+    <value>UI</value>
+  </data>
+  <data name="SettingsDefaultPreset" xml:space="preserve">
+    <value>Standardvoreinstellung:</value>
+  </data>
+  <data name="SettingsLanguage" xml:space="preserve">
+    <value>Sprache:</value>
+  </data>
+  <data name="SettingsResetSettings" xml:space="preserve">
+    <value>Einstellungen zurücksetzen:</value>
+  </data>
+  <data name="SettingsResetStatistics" xml:space="preserve">
+    <value>Statistiken zurücksetzen:</value>
+  </data>
+  <data name="SettingsShowWelcomeDialog" xml:space="preserve">
+    <value>Willkommensdialog anzeigen:</value>
+  </data>
+  <data name="SettingsTooltipColorChooser" xml:space="preserve">
+    <value>Doppelklick zum Öffnen des Farbauswahlfensters</value>
+  </data>
+  <data name="StatisticsCategoryAverageTime" xml:space="preserve">
+    <value>{0} Durchschnittszeit: {1}</value>
+  </data>
+  <data name="StatisticsCategoryGames" xml:space="preserve">
+    <value>{0} Spiele: {1}</value>
+  </data>
+  <data name="StatisticsCategoryLost" xml:space="preserve">
+    <value>{0} Niederlagen: {1}</value>
+  </data>
+  <data name="StatisticsCategoryMines" xml:space="preserve">
+    <value>{0} Minen: {1}</value>
+  </data>
+  <data name="StatisticsCategoryPerformance" xml:space="preserve">
+    <value>{0} Leistung: {1}%</value>
+  </data>
+  <data name="StatisticsCategoryShortestTime" xml:space="preserve">
+    <value>{0} Kürzeste Zeit: {1}</value>
+  </data>
+  <data name="StatisticsCategoryTotalTime" xml:space="preserve">
+    <value>{0} Gesamte Zeit: {1}</value>
+  </data>
+  <data name="StatisticsCategoryWon" xml:space="preserve">
+    <value>{0} Siege: {1}</value>
+  </data>
+  <data name="StatisticsPageGeneral" xml:space="preserve">
+    <value>Allgemein</value>
+  </data>
+  <data name="TutorialPage10Description" xml:space="preserve">
+    <value>Der Spieler kann Tipps verwenden, um ein zufälliges Feld aufzudecken, das eine Mine enthält. Dies kann in Situationen hilfreich sein, in denen der Spieler nicht weiß, welche Felder er als nächstes aufdecken soll. Die Tipps sind begrenzt und sollten sparsam verwendet werden.</value>
+  </data>
+  <data name="TutorialPage10Title" xml:space="preserve">
+    <value>Tipps</value>
+  </data>
+  <data name="TutorialPage11Description" xml:space="preserve">
+    <value>Der Spieler kann das Spiel jederzeit unterbrechen, indem er auf die Schaltfläche "Pause" klickt. Dadurch wird der Timer angehalten und der Spieler kann nicht versehentlich Felder aufdecken oder markieren. Der Spieler kann das Spiel fortsetzen, indem er auf die Schaltfläche "Fortsetzen" klickt.</value>
+  </data>
+  <data name="TutorialPage11Title" xml:space="preserve">
+    <value>Pause und Fortsetzen</value>
+  </data>
+  <data name="TutorialPage12Description" xml:space="preserve">
+    <value>Herzlichen Glückwunsch! Sie sind nun bereit, Minesweeper zu spielen. Denken Sie daran, Ihre Tipps klug einzusetzen und den Flaggenzähler im Auge zu behalten, damit keine Minen explodieren.</value>
+  </data>
+  <data name="TutorialPage12Title" xml:space="preserve">
+    <value>Viel Erfolg!</value>
+  </data>
+  <data name="TutorialPage1Description" xml:space="preserve">
+    <value>Minesweeper ist ein Puzzlespiel für Einzelspieler, bei dem es darum geht, ein rechteckiges Spielfeld mit versteckten Minen zu räumen, ohne eine von ihnen zur Explosion zu bringen. Die Spieler nutzen Logik, um sichere Felder aufzudecken und potenzielle Minenstandorte zu markieren, bis das gesamte Spielfeld geräumt ist und die Position aller Minen aufgedeckt ist.</value>
+  </data>
+  <data name="TutorialPage1Title" xml:space="preserve">
+    <value>Minesweeper</value>
+  </data>
+  <data name="TutorialPage2Description" xml:space="preserve">
+    <value>Links-Klick: Damit decken Sie ein Feld auf. Wenn das Feld eine Mine enthält, ist das Spiel vorbei. Handelt es sich um ein leeres Feld, werden alle angrenzenden leeren Felder aufgedeckt, bis eine Zahl erreicht wird. Wenn es sich um ein nummeriertes Feld handelt, wird nur dieses aufgedeckt.</value>
+  </data>
+  <data name="TutorialPage2Title" xml:space="preserve">
+    <value>Steuerung: Linksklick</value>
+  </data>
+  <data name="TutorialPage3Description" xml:space="preserve">
+    <value>Mittelklick: Damit können Sie ein Feld mit einem Fragezeichen markieren. Dies ist nützlich, wenn Sie sich nicht sicher sind, ob das Feld eine Mine enthält.</value>
+  </data>
+  <data name="TutorialPage3Title" xml:space="preserve">
+    <value>Steuerung: Mittelklick</value>
+  </data>
+  <data name="TutorialPage4Description" xml:space="preserve">
+    <value>Rechtsklick: Hiermit können Sie ein Feld mit einer Flagge versehen. Dies zeigt an, dass das Feld eine Mine enthält. Verwenden Sie den Flaggenzähler, um zu sehen, wie viele Minen noch auf dem Spielbrett liegen.</value>
+  </data>
+  <data name="TutorialPage4Title" xml:space="preserve">
+    <value>Steuerung: Rechtsklick</value>
+  </data>
+  <data name="TutorialPage5Description" xml:space="preserve">
+    <value>Das Spielfeld besteht aus einem Gitter aus Quadraten. Einige dieser Quadrate enthalten versteckte Minen. Das Ziel des Spielers ist es, alle Felder, die keine Minen enthalten, aufzudecken, ohne Minen zu zünden. Die Anzahl der Minen ist vorgegeben und nimmt mit der Größe des Spielfelds zu.</value>
+  </data>
+  <data name="TutorialPage5Title" xml:space="preserve">
+    <value>Spielmechanik 1/3</value>
+  </data>
+  <data name="TutorialPage6Description" xml:space="preserve">
+    <value>Wenn ein Feld aufgedeckt wird, ist es entweder leer oder enthält eine Zahl. Die Zahlen stehen für die Anzahl der Minen in den acht umliegenden Feldern. Steht auf einem Feld zum Beispiel die Zahl "3", bedeutet das, dass sich in den acht umliegenden Feldern drei Minen befinden.</value>
+  </data>
+  <data name="TutorialPage6Title" xml:space="preserve">
+    <value>Spielmechanik 2/3</value>
+  </data>
+  <data name="TutorialPage7Description" xml:space="preserve">
+    <value>Denken Sie daran, die Zahlen auf den Feldern zu verwenden, um zu erraten wo sich Minen befinden und diese nicht zu zünden!</value>
+  </data>
+  <data name="TutorialPage7Title" xml:space="preserve">
+    <value>Spielmechanik 3/3</value>
+  </data>
+  <data name="TutorialPage8Description" xml:space="preserve">
+    <value>Das Spiel läuft auf Zeit, und der Timer beginnt zu zählen, sobald der Spieler auf sein erstes Feld klickt. Die Zeit des Spielers wird auf dem Spielfeld angezeigt, und das Ziel des Spielers ist es, das Spiel in der kürzest möglichen Zeit zu beenden.</value>
+  </data>
+  <data name="TutorialPage8Title" xml:space="preserve">
+    <value>Timer</value>
+  </data>
+  <data name="TutorialPage9Description" xml:space="preserve">
+    <value>Der Spieler kann Felder markieren, von denen er glaubt, dass sie Minen enthalten. Ein Zähler zeigt an, wie viele Flaggen der Spieler gesetzt hat und wie viele Minen noch auf dem Spielbrett liegen. Der Spieler kann diese Informationen nutzen, um sichere Vermutungen anzustellen und das Zünden von Minen zu vermeiden.</value>
+  </data>
+  <data name="TutorialPage9Title" xml:space="preserve">
+    <value>Flaggenzähler</value>
+  </data>
+  <data name="WelcomeChosenLanguage" xml:space="preserve">
+    <value>Automatisch gewählte Sprache: {0}</value>
+  </data>
+  <data name="WelcomeStartPlayingText" xml:space="preserve">
+    <value>Spiel starten</value>
+  </data>
+  <data name="WelcomeText" xml:space="preserve">
+    <value>Willkommen</value>
+  </data>
+  <data name="WelcomeTutorialText" xml:space="preserve">
+    <value>Tutorial</value>
+  </data>
+</root>
