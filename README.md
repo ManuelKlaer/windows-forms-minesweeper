@@ -1,2 +1,2 @@
 # Minesweeper
-A Minesweeper implementation using C# Windows Forms.
+A Minesweeper clone made with C# Windows Forms. 
