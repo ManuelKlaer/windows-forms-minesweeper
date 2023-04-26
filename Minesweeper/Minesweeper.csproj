@@ -7,26 +7,33 @@
 		<UseWindowsForms>true</UseWindowsForms>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Title>Minesweeper</Title>
-		<Authors>Manuel Klär. Max Mitterböck</Authors>
-		<PlatformTarget>x64</PlatformTarget>
+		<Authors>Manuel Klär, Max Mitterböck</Authors>
+		<PlatformTarget>AnyCPU</PlatformTarget>
 		<Copyright>Manuel Klär, Max Mitterböck</Copyright>
-		<PackageTags>game,minesweeper,windows,forms,modern,ui,C#,german,english,themes</PackageTags>
-		<Description>A small and simple minesweeper game written using Windows Forms</Description>
-		<Company>HTL Neufelden</Company>
+		<PackageTags>game windows puzzle csharp minesweeper puzzle-game windows-forms windows-forms-application</PackageTags>
+		<Description>A Minesweeper clone made with C# Windows Forms.</Description>
+		<Company>ManuelKlaer</Company>
 		<NeutralLanguage>en-US</NeutralLanguage>
 		<AssemblyVersion>1.0.0</AssemblyVersion>
 		<FileVersion>1.0.0</FileVersion>
 		<ApplicationIcon>minesweeper.ico</ApplicationIcon>
 		<GenerateDocumentationFile>False</GenerateDocumentationFile>
 		<PackageIcon>minesweeper.png</PackageIcon>
+		<SignAssembly>False</SignAssembly>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<RepositoryUrl>https://github.com/ManuelKlaer/windows-forms-minesweeper</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+		<PackageProjectUrl></PackageProjectUrl>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-	  <DebugType>embedded</DebugType>
+	  <DebugType>none</DebugType>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-	  <DebugType>embedded</DebugType>
+	  <DebugType>none</DebugType>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -34,7 +41,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Include="..\Images\minesweeper.png">
+	  <None Include="..\LICENSE">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	  <None Include="..\README.md">
 	    <Pack>True</Pack>
 	    <PackagePath>\</PackagePath>
 	  </None>
@@ -84,6 +95,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<None Update="minesweeper.png">
+		  <Pack>True</Pack>
+		  <PackagePath>\</PackagePath>
+		</None>
 		<None Update="Properties\Settings.settings">
 			<Generator>PublicSettingsSingleFileGenerator</Generator>
 			<LastGenOutput>Settings.Designer.cs</LastGenOutput>
