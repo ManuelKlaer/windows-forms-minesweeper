@@ -1,13 +1,6 @@
 # Minesweeper
 Minesweeper is a C# Windows Forms Application that recreates the classic Minesweeper game but with a new UI.
 
-## Getting started
-To run Minesweeper on your computer, simply download the latest zip file from the [releases section](https://github.com/ManuelKlaer/windows-forms-minesweeper/releases) of the GitHub repository, extract it, and run the "Minsweeper.exe" executable.
-
-*Note: You need to have the latest .NET Desktop Runtime 7 installed on your computer.*
-
-*Note: When running the executable, you may see a Windows Defender popup that warns you that the application is from an unknown author. This is normal and expected, and you can safely run the application as long as you downloaded it from the [original source](https://github.com/ManuelKlaer/windows-forms-minesweeper/releases). To run the application, simply click on "More info" and then "Run anyway". If you have any concerns about the safety of the application, please do not hesitate to contact the developers.*
-
 ## Features
 - Multiple board presets: Mini, Beginner, Intermediate, Expert, and Custom
 - Hints
@@ -16,12 +9,19 @@ To run Minesweeper on your computer, simply download the latest zip file from th
 - Game Statistics
 - Game Tutorial
 
+## Getting started
+To run Minesweeper on your computer, simply download the latest zip file from the [releases section](https://github.com/ManuelKlaer/windows-forms-minesweeper/releases) of the GitHub repository, extract it, and run the `Minsweeper.exe` executable.
+
+*Note: You need to have the latest .NET Desktop Runtime 7 installed on your computer.*
+
+*Note: When running the executable, you may see a Windows Defender popup that warns you that the application is from an unknown author. This is normal and expected, and you can safely run the application as long as you downloaded it from the [original source](https://github.com/ManuelKlaer/windows-forms-minesweeper/releases). To run the application, simply click on "More info" and then "Run anyway". If you have any concerns about the safety of the application, please do not hesitate to contact the developers.*
+
 ## Requirements
 To run Minesweeper, you need to have .NET Desktop Runtime 7 installed on your computer. If you don't have it installed, you can download it from [Microsoft's website](https://dotnet.microsoft.com/en-us/download/dotnet/7.0).
 
 ### Installing the .NET Desktop Runtime 7 using winget
 Alternatively, if you have the winget package manager installed on your computer, you can install the .NET Desktop Runtime by running the following command in a command prompt or PowerShell window:
-```powershell
+```ps
 winget install Microsoft.DotNet.DesktopRuntime.7
 ```
 
@@ -41,6 +41,20 @@ Once the .NET Desktop Runtime 7 is installed on your computer, you should be abl
     <img alt="Game tutorial" src="Screenshots/Tutorial1.png" width="500px"/>
 </p>
 
+## Building from source
+### 1. Prerequisites
+- [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) with the `.NET Desktop Development` Workload
+- [Git for Windows](https://git-scm.com/download/win)
+
+### 2. Clone the repository
+```ps
+git clone https://github.com/ManuelKlaer/windows-forms-minesweeper.git
+```
+This will create a local copy of the repository in the current dictionary.
+
+### 3. Build the project
+To build Minesweeper, open the `Minesweeper.sln` item in Visual Studio. Head over to Build > Publish Selection and then select `LocalBuild_Portable`, if it isn't selected already. After that, click on Publish and wait until it's done compiling.
+
 ## Contributing
 Contributions to Minesweeper are welcome! If you'd like to contribute, please fork the repository and create a pull request with your changes.
 
@@ -48,7 +62,7 @@ Contributions to Minesweeper are welcome! If you'd like to contribute, please fo
 Minesweeper is released under the [MIT-License](https://opensource.org/licenses/MIT).
 
 ## Credits
-Minesweeper was created by [@ManuelKlaer](https://github.com/ManuelKlaer) and [@SleXwhy](https://github.com/SleXwhy) for a school project.
+Minesweeper was created by [@ManuelKlaer](https://github.com/ManuelKlaer) and [@MaxMitterboeck](https://github.com/MaxMitterboeck) for a school project.
 
 ## Contact
 If you have any questions or suggestions, please feel free to contact the developers.
