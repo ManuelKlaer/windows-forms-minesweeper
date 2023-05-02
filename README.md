@@ -3,6 +3,7 @@ Minesweeper is a C# Windows Forms Application that recreates the classic Mineswe
 
 ## Features
 - Multiple board presets: Mini, Beginner, Intermediate, Expert, and Custom
+- Timer with Play/Pause
 - Hints
 - Customizable theme colors (including Dark Mode)
 - Multiple languages (en and de)
