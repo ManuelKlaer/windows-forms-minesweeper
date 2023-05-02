@@ -2,6 +2,9 @@
 
 namespace Minesweeper.Enums;
 
+/// <summary>
+///     A collection of enums for the MinesweeperField-Component
+/// </summary>
 public static class MinesweeperFieldEnums
 {
     /// <summary>

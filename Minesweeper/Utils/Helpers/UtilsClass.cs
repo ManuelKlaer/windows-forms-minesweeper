@@ -2,10 +2,13 @@
 
 namespace Minesweeper.Utils.Helpers;
 
+/// <summary>
+///     A collection of useful utils.
+/// </summary>
 public static class UtilsClass
 {
     /// <summary>
-    ///     All characters that a valid hex string can contain
+    ///     All characters that a valid hex string can contain.
     /// </summary>
     public static readonly string HexValues = "abcdef0123456789";
 
@@ -80,9 +83,7 @@ public static class UtilsClass
     /// <param name="c">The color to modify.</param>
     /// <param name="percent">The percent.</param>
     /// <returns>The same color with a new brightness value.</returns>
-    public static Color ChangeColorBrightness2(Color c, float percent) => PerceivedBrightness(c) <= 140
-        ? ChangeColorBrightness(c, percent)
-        : ChangeColorBrightness(c, -percent);
+    public static Color ChangeColorBrightness2(Color c, float percent) => PerceivedBrightness(c) <= 140 ? ChangeColorBrightness(c, percent) : ChangeColorBrightness(c, -percent);
     // public static Color ChangeColorBrightness2(Color c, float percent) => PerceivedBrightness(c) <= 140 ? ControlPaint.Light(c, percent) : ControlPaint.Dark(c, percent);
 
     /// <summary>

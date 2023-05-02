@@ -1,65 +1,71 @@
 ﻿using System.Collections.Immutable;
 using System.Globalization;
 using System.Resources;
+using Minesweeper.Properties.Languages;
+
+// ReSharper disable MemberCanBePrivate.Global
 
 namespace Minesweeper.Controllers;
 
 /// <summary>
-/// A custom language controller
+///     A custom language controller that handles the language files.
 /// </summary>
 public static class LanguageController
 {
-    // Link language codes to a resource file
-    private static readonly Dictionary<string, LanguageResource> _resourceManagers = new()
+    // Link the language codes to the corresponding language resource file.
+    private static readonly Dictionary<string, LanguageResource> ResourceManagers = new()
     {
-        { new CultureInfo("en-US").Name, new LanguageResource(Properties.Languages.en_US.ResourceManager) },
-        { new CultureInfo("de-DE").Name, new LanguageResource(Properties.Languages.de_DE.ResourceManager) }
+        { new CultureInfo("en-US").Name, new LanguageResource(en_US.ResourceManager) },
+        { new CultureInfo("de-DE").Name, new LanguageResource(de_DE.ResourceManager) }
     };
 
     /// <summary>
-    /// All available languages as strings.
+    ///     All available language codes.
     /// </summary>
-    public static ImmutableArray<string> AvailableLanguages => _resourceManagers.Keys.ToImmutableArray();
+    public static ImmutableArray<string> AvailableLanguages => ResourceManagers.Keys.ToImmutableArray();
 
     /// <summary>
-    /// The current language as a string.
+    ///     The current language code.
     /// </summary>
     public static string CurrentLanguage { get; private set; } = AvailableLanguages[0];
 
     /// <summary>
-    /// The current language resource file.
+    ///     The current language resource file that corresponds to the <see cref="CurrentLanguage" />.
     /// </summary>
-    public static LanguageResource CurrentLanguageResource => _resourceManagers[CurrentLanguage];
+    public static LanguageResource CurrentLanguageResource => ResourceManagers[CurrentLanguage];
 
     /// <summary>
-    /// The language changed.
+    ///     Language changed event.
     /// </summary>
     public static event EventHandler? LanguageChanged;
 
     /// <summary>
-    /// Change the current language.
+    ///     Set a new language.
     /// </summary>
     /// <param name="language">The new language.</param>
     public static void SetLanguage(CultureInfo language) => SetLanguage(language.Name);
 
     /// <summary>
-    /// Change the current language.
+    ///     Set a new language code.
     /// </summary>
     /// <param name="language">The new language.</param>
+    /// <exception cref="ArgumentException">The language code doesn't correspond to any language file.</exception>
     public static void SetLanguage(string language)
     {
-        if (AvailableLanguages.Contains(language)) CurrentLanguage = language;
+        if (!AvailableLanguages.Contains(language))
+            throw new ArgumentException($"The language code {language} doesn't correspond to any language file.", nameof(language));
+        CurrentLanguage = language;
         LanguageChanged?.Invoke(null, EventArgs.Empty);
     }
 
     /// <summary>
-    /// Apply the current language reported by the operating system
+    ///     Set the current language to the language reported by the operating system.
     /// </summary>
     public static void ApplyOsLanguage()
     {
-        CultureInfo userLanguage = CultureInfo.CurrentCulture;
+        CultureInfo userLanguage = CultureInfo.CurrentCulture; // Get current OS language
 
-        if (AvailableLanguages.Contains(userLanguage.Name)) // If this application supports the users language, use it
+        if (AvailableLanguages.Contains(userLanguage.Name)) // Check if this application supports the users language, if true use it
             SetLanguage(userLanguage);
         else if (AvailableLanguages.Any(l => l.Contains(userLanguage.TwoLetterISOLanguageName))) // Search for a similar language, if the same language isn't supported by this application
             SetLanguage(AvailableLanguages[Array.FindIndex(AvailableLanguages.ToArray(), l => l.Contains(userLanguage.TwoLetterISOLanguageName))]);
@@ -69,7 +75,7 @@ public static class LanguageController
 }
 
 /// <summary>
-/// A language resource file manager.
+///     Language resource manager.
 /// </summary>
 public class LanguageResource
 {
@@ -77,13 +83,12 @@ public class LanguageResource
     private readonly ResourceManager _resourceManager;
 
     /// <summary>
-    /// Initialize a new resource file.
+    ///     Initialize a new language resource file.
     /// </summary>
     /// <param name="resourceManager">The resource manager of the resource file.</param>
-    public LanguageResource(ResourceManager resourceManager)
-    {
-        _resourceManager = resourceManager;
-    }
+    public LanguageResource(ResourceManager resourceManager) => _resourceManager = resourceManager;
+
+    #region Language file attributes
 
     public string AppTitle => _resourceManager.GetString("AppTitle")!;
     public string AppCopyright => _resourceManager.GetString("AppCopyright")!;
@@ -190,4 +195,6 @@ public class LanguageResource
     public string SettingsTooltipColorChooser => _resourceManager.GetString("SettingsTooltipColorChooser")!;
     public string SettingsButtonShow => _resourceManager.GetString("SettingsButtonShow")!;
     public string SettingsButtonReset => _resourceManager.GetString("SettingsButtonReset")!;
+
+    #endregion
 }

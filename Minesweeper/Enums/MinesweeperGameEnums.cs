@@ -1,5 +1,8 @@
 ﻿namespace Minesweeper.Enums;
 
+/// <summary>
+///     A collection of enums for the minesweeper game.
+/// </summary>
 public static class MinesweeperGameEnums
 {
     /// <summary>
@@ -8,7 +11,7 @@ public static class MinesweeperGameEnums
     public enum GameState
     {
         Stopped,
-        Paused, // ToDo: Paused needs to update StartTimeUtc - How to implement paused?
+        Paused,
         Running
     }
 

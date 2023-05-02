@@ -1,12 +1,27 @@
 ﻿namespace Minesweeper.Views.Interfaces;
 
+/// <summary>
+///     The interface for a component that supports text rendering.
+/// </summary>
 public interface IComponentText : IComponent
 {
+    /// <summary>
+    ///     The renders text of this <see cref="IComponentText" />.
+    /// </summary>
     public string Text { get; set; }
 
+    /// <summary>
+    ///     The font fo the <see cref="Text" />.
+    /// </summary>
     public Font Font { get; set; }
 
+    /// <summary>
+    ///     The format rules for the <see cref="Text" />.
+    /// </summary>
     public StringFormat TextFormat { get; set; }
 
+    /// <summary>
+    ///     The text / foreground color of this <see cref="IComponentText" />.
+    /// </summary>
     public Color ForeColor { get; set; }
 }

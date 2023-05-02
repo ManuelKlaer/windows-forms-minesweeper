@@ -1,25 +1,34 @@
-﻿using Minesweeper.Controllers;
-using Minesweeper.Utils.Helpers;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Globalization;
+using Minesweeper.Controllers;
+using Minesweeper.Utils.Helpers;
 
 namespace Minesweeper;
 
+/// <summary>
+///     Welcome dialog.
+/// </summary>
 public partial class Welcome : Form
 {
+    /// <summary>
+    ///     Initialize a new instance of <see cref="Welcome" />.
+    /// </summary>
     public Welcome()
     {
         InitializeComponent();
 
         // Initialize settings
         Properties.Settings.Default.PropertyChanged += SettingsChanged;
-        SettingsChanged(this, new PropertyChangedEventArgs("None"));  // Apply current settings
+        SettingsChanged(this, new PropertyChangedEventArgs("None")); // Apply current settings
 
         // Initialize language
         LanguageController.LanguageChanged += LanguageChanged;
-        LanguageChanged(null, EventArgs.Empty);  // Apply current language
+        LanguageChanged(null, EventArgs.Empty); // Apply current language
     }
 
+    /// <summary>
+    ///     Event that gets called when a setting changed.
+    /// </summary>
     private void SettingsChanged(object? sender, PropertyChangedEventArgs e)
     {
         // Apply background color
@@ -32,6 +41,9 @@ public partial class Welcome : Form
         chosenLanguageLabel.ForeColor = UtilsClass.ChangeColorBrightness2(ForeColor, 0.2f);
     }
 
+    /// <summary>
+    ///     Event that gets called when the language changed.
+    /// </summary>
     private void LanguageChanged(object? sender, EventArgs e)
     {
         Text = string.Format(LanguageController.CurrentLanguageResource.AppTitleWelcome, LanguageController.CurrentLanguageResource.AppTitle);
