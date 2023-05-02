@@ -34,6 +34,7 @@
             infoTableLayout = new TableLayoutPanel();
             titleLabel = new Label();
             copyrightLabel = new Label();
+            githubLabel = new Label();
             mainTableLayout.SuspendLayout();
             infoTableLayout.SuspendLayout();
             SuspendLayout();
@@ -63,7 +64,7 @@
             iconLabel.Location = new Point(6, 0);
             iconLabel.Margin = new Padding(6, 0, 0, 6);
             iconLabel.Name = "iconLabel";
-            iconLabel.Size = new Size(176, 157);
+            iconLabel.Size = new Size(176, 155);
             iconLabel.TabIndex = 0;
             iconLabel.Text = "💣";
             iconLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -76,14 +77,16 @@
             infoTableLayout.ColumnStyles.Add(new ColumnStyle());
             infoTableLayout.Controls.Add(titleLabel, 0, 0);
             infoTableLayout.Controls.Add(copyrightLabel, 0, 1);
+            infoTableLayout.Controls.Add(githubLabel, 0, 2);
             infoTableLayout.Dock = DockStyle.Fill;
             infoTableLayout.Location = new Point(182, 0);
             infoTableLayout.Margin = new Padding(0);
             infoTableLayout.Name = "infoTableLayout";
-            infoTableLayout.RowCount = 2;
+            infoTableLayout.RowCount = 3;
             infoTableLayout.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
             infoTableLayout.RowStyles.Add(new RowStyle(SizeType.Percent, 60F));
-            infoTableLayout.Size = new Size(182, 163);
+            infoTableLayout.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
+            infoTableLayout.Size = new Size(182, 161);
             infoTableLayout.TabIndex = 1;
             // 
             // titleLabel
@@ -94,23 +97,39 @@
             titleLabel.Location = new Point(0, 10);
             titleLabel.Margin = new Padding(0, 10, 10, 0);
             titleLabel.Name = "titleLabel";
-            titleLabel.Size = new Size(172, 55);
+            titleLabel.Size = new Size(172, 42);
             titleLabel.TabIndex = 0;
             titleLabel.Text = "Minesweeper";
             titleLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // copyrightLabel
             // 
+            copyrightLabel.AutoSize = true;
             copyrightLabel.Dock = DockStyle.Fill;
             copyrightLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             copyrightLabel.ForeColor = Color.DimGray;
-            copyrightLabel.Location = new Point(0, 65);
-            copyrightLabel.Margin = new Padding(0, 0, 10, 10);
+            copyrightLabel.Location = new Point(0, 52);
+            copyrightLabel.Margin = new Padding(0, 0, 10, 0);
             copyrightLabel.Name = "copyrightLabel";
-            copyrightLabel.Size = new Size(172, 88);
+            copyrightLabel.Size = new Size(172, 78);
             copyrightLabel.TabIndex = 1;
             copyrightLabel.Text = "© Manuel Klär\r\n© Max Mitterböck";
             copyrightLabel.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // githubLabel
+            // 
+            githubLabel.AutoSize = true;
+            githubLabel.Cursor = Cursors.Hand;
+            githubLabel.Dock = DockStyle.Fill;
+            githubLabel.Font = new Font("Segoe UI", 9F, FontStyle.Italic | FontStyle.Underline, GraphicsUnit.Point);
+            githubLabel.Location = new Point(0, 130);
+            githubLabel.Margin = new Padding(0, 0, 10, 10);
+            githubLabel.Name = "githubLabel";
+            githubLabel.Size = new Size(172, 21);
+            githubLabel.TabIndex = 2;
+            githubLabel.Text = "View this project on GitHub";
+            githubLabel.TextAlign = ContentAlignment.MiddleCenter;
+            githubLabel.Click += GithubLabelClick;
             // 
             // About
             // 
@@ -145,5 +164,6 @@
         private TableLayoutPanel infoTableLayout;
         private Label titleLabel;
         private Label copyrightLabel;
+        private Label githubLabel;
     }
 }

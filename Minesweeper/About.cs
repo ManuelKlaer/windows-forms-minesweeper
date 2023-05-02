@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Diagnostics;
 using Minesweeper.Controllers;
 using Minesweeper.Utils.Helpers;
 
@@ -35,6 +36,7 @@ public partial class About : Form
         ForeColor = UtilsClass.BlackOrWhite(BackColor);
 
         copyrightLabel.ForeColor = UtilsClass.ChangeColorBrightness2(ForeColor, 0.2f);
+        githubLabel.ForeColor = UtilsClass.ChangeColorBrightness2(ForeColor, 0.2f);
     }
 
     /// <summary>
@@ -46,5 +48,21 @@ public partial class About : Form
         titleLabel.Text = LanguageController.CurrentLanguageResource.AppTitle;
         iconLabel.Text = LanguageController.CurrentLanguageResource.AppEmoji;
         copyrightLabel.Text = LanguageController.CurrentLanguageResource.AppCopyright;
+    }
+
+    /// <summary>
+    ///     Event that gets called when GithubLabel is clicked.
+    /// </summary>
+    private void GithubLabelClick(object sender, EventArgs e)
+    {
+        // Create a new shell process
+        ProcessStartInfo psInfo = new()
+        {
+            FileName = "https://github.com/ManuelKlaer/windows-forms-minesweeper",
+            UseShellExecute = true
+        };
+
+        // Start the shell process to open the url
+        Process.Start(psInfo);
     }
 }
