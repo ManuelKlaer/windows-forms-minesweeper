@@ -13,6 +13,23 @@ internal static class Program
     [STAThread]
     private static void Main()
     {
+        // Handle unhandled exceptions
+        try
+        {
+            Run();
+        }
+        catch (Exception ex)
+        {
+            DialogResult res = MessageBox.Show($"{ex.Message}\n\nStacktrace:\n{ex.StackTrace}\n\n- Click yes to copy to clipboard", "Unhandled Exception", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+            if (res == DialogResult.Yes) Clipboard.SetText($"Unhandled Exception:\n\n{ex.Message}\n\nStacktrace:\n{ex.StackTrace}");
+        }
+    }
+
+    /// <summary>
+    ///     Run the application
+    /// </summary>
+    private static void Run()
+    {
         // To customize application configuration such as set high DPI settings or default font,
         // see https://aka.ms/applicationconfiguration.
         ApplicationConfiguration.Initialize();
