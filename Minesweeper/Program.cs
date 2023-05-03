@@ -34,8 +34,8 @@ internal static class Program
         // see https://aka.ms/applicationconfiguration.
         ApplicationConfiguration.Initialize();
 
-        // Detect user language if none was set
-        if (string.IsNullOrEmpty(Properties.Settings.Default.Language))
+        // Detect user language if none was set or if it's invalid
+        if (string.IsNullOrEmpty(Properties.Settings.Default.Language) || !LanguageController.AvailableLanguages.Contains(Properties.Settings.Default.Language))
         {
             LanguageController.ApplyOsLanguage();
             Properties.Settings.Default.Language = LanguageController.CurrentLanguage;
