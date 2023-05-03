@@ -9,7 +9,7 @@
   <Identity
     Name="14695753-c9fa-4f09-b18f-fac37d8ab53a"
     Publisher="CN=ManuelKlaer"
-    Version="1.0.0.0" />
+    Version="1.0.1.0" />
 
   <Properties>
     <DisplayName>Minesweeper</DisplayName>

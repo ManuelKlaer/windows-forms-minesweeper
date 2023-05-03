@@ -1,66 +1,68 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
+		<Title>Minesweeper</Title>
+		<ApplicationIcon>minesweeper.ico</ApplicationIcon>
+		<PackageIcon>minesweeper.png</PackageIcon>
+		<Description>A Minesweeper clone made with C# Windows Forms.</Description>
+		<Authors>Manuel Klär, Max Mitterböck</Authors>
+		<Company>ManuelKlaer</Company>
+		<Copyright>Manuel Klär, Max Mitterböck</Copyright>
+		<NeutralLanguage>en-US</NeutralLanguage>
+		<Version>1.0.1</Version>
+		<VersionPrefix>1.0.1</VersionPrefix>
+		<AssemblyVersion>1.0.1</AssemblyVersion>
+		<FileVersion>1.0.1</FileVersion>
+		<PlatformTarget>AnyCPU</PlatformTarget>
 		<OutputType>WinExe</OutputType>
-		<TargetFramework>net7.0-windows</TargetFramework>
 		<Nullable>enable</Nullable>
 		<UseWindowsForms>true</UseWindowsForms>
+		<TargetFramework>net7.0-windows</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
-		<Title>Minesweeper</Title>
-		<Authors>Manuel Klär, Max Mitterböck</Authors>
-		<PlatformTarget>AnyCPU</PlatformTarget>
-		<Copyright>Manuel Klär, Max Mitterböck</Copyright>
 		<PackageTags>game windows puzzle csharp minesweeper puzzle-game windows-forms windows-forms-application</PackageTags>
-		<Description>A Minesweeper clone made with C# Windows Forms.</Description>
-		<Company>ManuelKlaer</Company>
-		<NeutralLanguage>en-US</NeutralLanguage>
-		<AssemblyVersion>1.0.0</AssemblyVersion>
-		<FileVersion>1.0.0</FileVersion>
-		<ApplicationIcon>minesweeper.ico</ApplicationIcon>
 		<GenerateDocumentationFile>False</GenerateDocumentationFile>
-		<PackageIcon>minesweeper.png</PackageIcon>
 		<SignAssembly>False</SignAssembly>
+		<RepositoryType>git</RepositoryType>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<RepositoryUrl>https://github.com/ManuelKlaer/windows-forms-minesweeper</RepositoryUrl>
-		<RepositoryType>git</RepositoryType>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
 		<PackageProjectUrl></PackageProjectUrl>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-	  <DebugType>none</DebugType>
+		<DebugType>none</DebugType>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-	  <DebugType>none</DebugType>
+		<DebugType>none</DebugType>
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <Content Include="minesweeper.ico" />
+		<Content Include="minesweeper.ico" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Include="..\LICENSE">
-	    <Pack>True</Pack>
-	    <PackagePath>\</PackagePath>
-	  </None>
-	  <None Include="..\README.md">
-	    <Pack>True</Pack>
-	    <PackagePath>\</PackagePath>
-	  </None>
+		<None Include="..\LICENSE">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+		<None Include="..\README.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
 	</ItemGroup>
 
 	<ItemGroup>
 		<Compile Update="Properties\Languages\de_DE.Designer.cs">
-		  <DesignTime>True</DesignTime>
-		  <AutoGen>True</AutoGen>
-		  <DependentUpon>de_DE.resx</DependentUpon>
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>de_DE.resx</DependentUpon>
 		</Compile>
 		<Compile Update="Properties\Languages\en_US.Designer.cs">
-		  <DesignTime>True</DesignTime>
-		  <AutoGen>True</AutoGen>
-		  <DependentUpon>en_US.resx</DependentUpon>
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>en_US.resx</DependentUpon>
 		</Compile>
 		<Compile Update="Properties\Resources.Designer.cs">
 			<DesignTime>True</DesignTime>
@@ -73,20 +75,20 @@
 			<DependentUpon>Settings.settings</DependentUpon>
 		</Compile>
 		<Compile Update="Properties\Statistics.Designer.cs">
-		  <DesignTimeSharedInput>True</DesignTimeSharedInput>
-		  <AutoGen>True</AutoGen>
-		  <DependentUpon>Statistics.settings</DependentUpon>
+			<DesignTimeSharedInput>True</DesignTimeSharedInput>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Statistics.settings</DependentUpon>
 		</Compile>
 	</ItemGroup>
 
 	<ItemGroup>
 		<EmbeddedResource Update="Properties\Languages\de_DE.resx">
-		  <Generator>ResXFileCodeGenerator</Generator>
-		  <LastGenOutput>de_DE.Designer.cs</LastGenOutput>
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>de_DE.Designer.cs</LastGenOutput>
 		</EmbeddedResource>
 		<EmbeddedResource Update="Properties\Languages\en_US.resx">
-		  <Generator>ResXFileCodeGenerator</Generator>
-		  <LastGenOutput>en_US.Designer.cs</LastGenOutput>
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>en_US.Designer.cs</LastGenOutput>
 		</EmbeddedResource>
 		<EmbeddedResource Update="Properties\Resources.resx">
 			<Generator>ResXFileCodeGenerator</Generator>
@@ -96,16 +98,16 @@
 
 	<ItemGroup>
 		<None Update="minesweeper.png">
-		  <Pack>True</Pack>
-		  <PackagePath>\</PackagePath>
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
 		</None>
 		<None Update="Properties\Settings.settings">
 			<Generator>PublicSettingsSingleFileGenerator</Generator>
 			<LastGenOutput>Settings.Designer.cs</LastGenOutput>
 		</None>
 		<None Update="Properties\Statistics.settings">
-		  <Generator>PublicSettingsSingleFileGenerator</Generator>
-		  <LastGenOutput>Statistics.Designer.cs</LastGenOutput>
+			<Generator>PublicSettingsSingleFileGenerator</Generator>
+			<LastGenOutput>Statistics.Designer.cs</LastGenOutput>
 		</None>
 	</ItemGroup>
 </Project>
