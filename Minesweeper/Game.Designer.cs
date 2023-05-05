@@ -208,6 +208,7 @@ namespace Minesweeper
             ForeColor = Color.Black;
             MainMenuStrip = menuStrip;
             Name = "Minesweeper";
+            Deactivate += Minesweeper_Deactivated;
             FormClosing += MinesweeperFormClosing;
             Load += Minesweeper_Load;
             Shown += Minesweeper_Shown;

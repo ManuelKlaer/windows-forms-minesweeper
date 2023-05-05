@@ -85,6 +85,15 @@ public partial class Minesweeper : Form
     }
 
     /// <summary>
+    ///     Event that gets called when the windows looses focus.
+    /// </summary>
+    private void Minesweeper_Deactivated(object? sender, EventArgs e)
+    {
+        // Pause the currently running game
+        if (_gameBoard.CurrentGameState == MinesweeperGameEnums.GameState.Running) _gameBoard.PauseGame();
+    }
+
+    /// <summary>
     ///     Event that gets called when this windows is opened.
     /// </summary>
     private void Minesweeper_Shown(object sender, EventArgs e)
