@@ -48,6 +48,8 @@ public partial class About : Form
         titleLabel.Text = LanguageController.CurrentLanguageResource.AppTitle;
         iconLabel.Text = LanguageController.CurrentLanguageResource.AppEmoji;
         copyrightLabel.Text = LanguageController.CurrentLanguageResource.AppCopyright;
+        versionLabel.Text = string.Format(LanguageController.CurrentLanguageResource.AppVersion, Application.ProductVersion);
+        githubLabel.Text = LanguageController.CurrentLanguageResource.AboutViewOnGithub;
     }
 
     /// <summary>

@@ -92,6 +92,7 @@ public class LanguageResource
 
     public string AppTitle => _resourceManager.GetString("AppTitle")!;
     public string AppCopyright => _resourceManager.GetString("AppCopyright")!;
+    public string AppVersion => _resourceManager.GetString("AppVersion")!;
     public string AppEmoji => _resourceManager.GetString("AppEmoji")!;
     public string AppTitleWelcome => _resourceManager.GetString("AppTitleWelcome")!;
     public string AppTitleCustomGame => _resourceManager.GetString("AppTitleCustomGame")!;
@@ -145,6 +146,7 @@ public class LanguageResource
     public string WelcomeTutorialText => _resourceManager.GetString("WelcomeTutorialText")!;
     public string WelcomeStartPlayingText => _resourceManager.GetString("WelcomeStartPlayingText")!;
     public string WelcomeChosenLanguage => _resourceManager.GetString("WelcomeChosenLanguage")!;
+    public string AboutViewOnGithub => _resourceManager.GetString("AboutViewOnGithub")!;
     public string CustomWidth => _resourceManager.GetString("CustomWidth")!;
     public string CustomHeight => _resourceManager.GetString("CustomHeight")!;
     public string CustomMines => _resourceManager.GetString("CustomMines")!;

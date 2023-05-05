@@ -61,6 +61,15 @@ namespace Minesweeper.Properties.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dieses Projekt auf GitHub ansehen.
+        /// </summary>
+        internal static string AboutViewOnGithub {
+            get {
+                return ResourceManager.GetString("AboutViewOnGithub", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ✓.
         /// </summary>
         internal static string AppConfirmButton {
@@ -238,6 +247,15 @@ namespace Minesweeper.Properties.Languages {
         internal static string AppTitleWelcome {
             get {
                 return ResourceManager.GetString("AppTitleWelcome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Version: {0}.
+        /// </summary>
+        internal static string AppVersion {
+            get {
+                return ResourceManager.GetString("AppVersion", resourceCulture);
             }
         }
         

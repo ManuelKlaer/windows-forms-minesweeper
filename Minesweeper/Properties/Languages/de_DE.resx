@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AboutViewOnGithub" xml:space="preserve">
+    <value>Dieses Projekt auf GitHub ansehen</value>
+  </data>
   <data name="AppConfirmButton" xml:space="preserve">
     <value>✓</value>
   </data>
@@ -177,6 +180,9 @@
   </data>
   <data name="AppTitleWelcome" xml:space="preserve">
     <value>Willkommen zu {0}</value>
+  </data>
+  <data name="AppVersion" xml:space="preserve">
+    <value>Version: {0}</value>
   </data>
   <data name="CustomHeight" xml:space="preserve">
     <value>Höhe</value>
