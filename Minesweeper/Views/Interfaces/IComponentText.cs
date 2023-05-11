@@ -6,7 +6,7 @@
 public interface IComponentText : IComponent
 {
     /// <summary>
-    ///     The renders text of this <see cref="IComponentText" />.
+    ///     The rendered text of this <see cref="IComponentText" />.
     /// </summary>
     public string Text { get; set; }
 
