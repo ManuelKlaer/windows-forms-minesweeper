@@ -1,5 +1,5 @@
 # Minesweeper
-Minesweeper is a C# Windows Forms Application that recreates the classic Minesweeper game but with a new UI.
+Minesweeper is a C# Windows Forms Application that recreates the classic Minesweeper game but with a fresh and simple UI.
 
 ## Features
 - Multiple board presets: Mini, Beginner, Intermediate, Expert, and Custom
