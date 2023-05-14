@@ -11,12 +11,12 @@ public interface IComponentText : IComponent
     public string Text { get; set; }
 
     /// <summary>
-    ///     The font fo the <see cref="Text" />.
+    ///     The font for the <see cref="Text" />.
     /// </summary>
     public Font Font { get; set; }
 
     /// <summary>
-    ///     The format rules for the <see cref="Text" />.
+    ///     Formatting rules for the <see cref="Text" />.
     /// </summary>
     public StringFormat TextFormat { get; set; }
 
