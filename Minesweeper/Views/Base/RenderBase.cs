@@ -62,6 +62,12 @@ public abstract class RenderBase : Control
     public IRenderModel Model { get; protected set; }
 
     /// <summary>
+    ///     An <see cref="IOverlay"/> that's used to display information on the screen.
+    ///     Set null to hide the overlay.
+    /// </summary>
+    public IOverlay? Overlay { get; set; }
+
+    /// <summary>
     ///     Event that gets called when the mouse button is released.
     /// </summary>
     public event EventHandler<RenderMouseEventArgs>? ComponentMouseUp;
@@ -157,10 +163,10 @@ public abstract class RenderBase : Control
         Graphics.FillRectangle(new SolidBrush(BackColor), ClientRectangle);
 
         // Draw all components
-        Rectangle componentRectangle = new(0, 0, (int)Math.Ceiling(ComponentSize.Width),
-            (int)Math.Ceiling(ComponentSize.Height));
+        Rectangle componentRectangle = new(0, 0, (int)Math.Ceiling(ComponentSize.Width), (int)Math.Ceiling(ComponentSize.Height));
 
         for (int col = 0; col < Model.Columns; col++)
+        {
             for (int row = 0; row < Model.Rows; row++)
             {
                 componentRectangle.X = (int)Math.Ceiling(col * ComponentSize.Width);
@@ -169,6 +175,10 @@ public abstract class RenderBase : Control
                 IComponent? component = Model.Get(col, row);
                 component?.Paint(componentRectangle, Graphics);
             }
+        }
+
+        // Render the overlay if it's available and enabled
+        if (Overlay is not null && Overlay.Enabled) Overlay.Paint(ClientRectangle, Graphics);
 
         // Render the buffer to the screen
         e.Graphics.DrawImageUnscaled(Buffer, 0, 0);
