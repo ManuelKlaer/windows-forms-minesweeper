@@ -184,12 +184,14 @@ namespace Minesweeper
             // gameOverview_Hints
             // 
             resources.ApplyResources(gameOverview_Hints, "gameOverview_Hints");
+            gameOverview_Hints.Cursor = Cursors.Hand;
             gameOverview_Hints.Name = "gameOverview_Hints";
             gameOverview_Hints.Click += GameOverviewHintsClick;
             // 
             // gameOverview_ResumePause
             // 
             resources.ApplyResources(gameOverview_ResumePause, "gameOverview_ResumePause");
+            gameOverview_ResumePause.Cursor = Cursors.Hand;
             gameOverview_ResumePause.Name = "gameOverview_ResumePause";
             gameOverview_ResumePause.Click += GameOverviewResumePauseClick;
             // 
