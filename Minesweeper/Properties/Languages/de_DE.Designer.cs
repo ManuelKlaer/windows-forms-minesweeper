@@ -701,7 +701,7 @@ namespace Minesweeper.Properties.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Doppelklick zum Öffnen des Farbauswahlfensters.
+        ///   Looks up a localized string similar to Strg + Klick, um den Hex-Code zu bearbeiten.
         /// </summary>
         internal static string SettingsTooltipColorChooser {
             get {

@@ -200,6 +200,7 @@
             accentColorTextBox.BackColor = Color.White;
             accentColorTextBox.BorderStyle = BorderStyle.FixedSingle;
             accentColorTextBox.CharacterCasing = CharacterCasing.Upper;
+            accentColorTextBox.Cursor = Cursors.Hand;
             accentColorTextBox.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             accentColorTextBox.ForeColor = Color.Black;
             accentColorTextBox.Location = new Point(230, 5);
@@ -210,8 +211,8 @@
             accentColorTextBox.TabIndex = 2;
             accentColorTextBox.Text = "#281A1A";
             accentColorTextBox.WordWrap = false;
+            accentColorTextBox.Click += AccentColorTextBoxClick;
             accentColorTextBox.TextChanged += AccentColorTextBoxTextChanged;
-            accentColorTextBox.DoubleClick += AccentColorTextBoxDoubleClick;
             // 
             // backgroundColorLabel
             // 
@@ -232,6 +233,7 @@
             backgroundColorTextBox.BackColor = Color.White;
             backgroundColorTextBox.BorderStyle = BorderStyle.FixedSingle;
             backgroundColorTextBox.CharacterCasing = CharacterCasing.Upper;
+            backgroundColorTextBox.Cursor = Cursors.Hand;
             backgroundColorTextBox.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             backgroundColorTextBox.ForeColor = Color.Black;
             backgroundColorTextBox.Location = new Point(230, 38);
@@ -242,8 +244,8 @@
             backgroundColorTextBox.TabIndex = 3;
             backgroundColorTextBox.Text = "#FFFFFF";
             backgroundColorTextBox.WordWrap = false;
+            backgroundColorTextBox.Click += BackgroundColorTextBoxClick;
             backgroundColorTextBox.TextChanged += BackgroundColorTextBoxTextChanged;
-            backgroundColorTextBox.DoubleClick += BackgroundColorTextBoxDoubleClick;
             // 
             // languageLabel
             // 

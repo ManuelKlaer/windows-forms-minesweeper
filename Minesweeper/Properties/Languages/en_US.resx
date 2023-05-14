@@ -332,7 +332,7 @@
     <value>Show welcome dialog:</value>
   </data>
   <data name="SettingsTooltipColorChooser" xml:space="preserve">
-    <value>Double-click to open a color chooser</value>
+    <value>Ctrl + Click to edit the hex-code</value>
   </data>
   <data name="StatisticsCategoryAverageTime" xml:space="preserve">
     <value>{0} Average Time: {1}</value>

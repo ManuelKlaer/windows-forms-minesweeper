@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Globalization;
+using Microsoft.VisualBasic.Devices;
 using Minesweeper.Controllers;
 using Minesweeper.Utils.Helpers;
 
@@ -145,10 +146,12 @@ public partial class Settings : Form
     }
 
     /// <summary>
-    ///     Event that gets called when the the AccentColorTextBox is double clicked.
+    ///     Event that gets called when the the AccentColorTextBox is clicked.
     /// </summary>
-    private void AccentColorTextBoxDoubleClick(object sender, EventArgs e)
+    private void AccentColorTextBoxClick(object sender, EventArgs e)
     {
+        if (ModifierKeys.HasFlag(Keys.Control)) return;
+
         colorChooserDialog.Color = Properties.Settings.Default.AccentColor;
         colorChooserDialog.ShowDialog();
 
@@ -169,10 +172,12 @@ public partial class Settings : Form
     }
 
     /// <summary>
-    ///     Event that gets called when the the BackgroundColorTextBox is double clicked.
+    ///     Event that gets called when the the BackgroundColorTextBox is clicked.
     /// </summary>
-    private void BackgroundColorTextBoxDoubleClick(object sender, EventArgs e)
+    private void BackgroundColorTextBoxClick(object sender, EventArgs e)
     {
+        if (ModifierKeys.HasFlag(Keys.Control)) return;
+
         colorChooserDialog.Color = Properties.Settings.Default.BackgroundColor;
         colorChooserDialog.ShowDialog();
 
