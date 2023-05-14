@@ -7,6 +7,7 @@ using Minesweeper.Views;
 using Minesweeper.Views.Components;
 using Minesweeper.Views.CustomEventArgs;
 using Minesweeper.Views.Interfaces;
+using Minesweeper.Views.Overlays;
 
 // ReSharper disable MemberCanBePrivate.Global
 #pragma warning disable IDE0051 // Remove unused private members
@@ -28,6 +29,16 @@ public class MinesweeperBoardController
 
     // A TimeSpan List to store all pause durations. This is done to avoid any inaccuracy of the total game time.
     private List<TimeSpan> _gamePauseTimes = new();
+
+    /// <summary>
+    ///     Initialize a new instance of <see cref="MinesweeperBoardController"/>.
+    /// </summary>
+    public MinesweeperBoardController()
+    {
+        // Update the renderer overlay on language or settings change
+        Properties.Settings.Default.PropertyChanged += (sender, args) => { UpdateOverlay(); };
+        LanguageController.LanguageChanged += (sender, args) => { UpdateOverlay(); };
+    }
 
     /// <summary>
     ///     The model that is used to store all MinesweeperField components.
@@ -123,9 +134,25 @@ public class MinesweeperBoardController
 
         View.ComponentMouseUp += ViewOnMouseRelease;
 
+        // Create a new overlay to display status information to the user
+        BasicTextOverlay overlay = new()
+        {
+            Enabled = false,
+            Font = new Font("Segoe UI", 14),
+            TextFormat =
+            {
+                Alignment = StringAlignment.Center,
+                LineAlignment = StringAlignment.Center
+            }
+        };
+        View.Overlay = overlay;
+
         // Reset flag counter
         CurrentFlagCount = 0;
         ComponentUpdated?.Invoke(this, EventArgs.Empty);
+
+        // Display overlay
+        UpdateOverlay();
     }
 
     /// <summary>
@@ -160,13 +187,19 @@ public class MinesweeperBoardController
         if (CurrentGameState != MinesweeperGameEnums.GameState.Paused)
             throw new InvalidOperationException("The game can't be resumed if it's currently not paused.");
 
-        // Calculate pause time and it to the history
+        // Calculate pause time and add it to the history
         TimeSpan pauseDiff = DateTime.UtcNow.Subtract(_gamePauseStartTime);
         _gamePauseTimes.Add(pauseDiff);
 
         // Update the game state
         CurrentGameState = MinesweeperGameEnums.GameState.Running;
         GameStateChanged?.Invoke(this, EventArgs.Empty);
+
+        // Update overlay
+        UpdateOverlay();
+
+        // Update view
+        View?.Invalidate();
     }
 
     /// <summary>
@@ -184,6 +217,41 @@ public class MinesweeperBoardController
         // Update the game state
         CurrentGameState = MinesweeperGameEnums.GameState.Paused;
         GameStateChanged?.Invoke(this, EventArgs.Empty);
+
+        // Update overlay
+        UpdateOverlay();
+
+        // Update view
+        View?.Invalidate();
+    }
+
+    /// <summary>
+    ///     Update renderer overlay to display the current game state.
+    /// </summary>
+    private void UpdateOverlay()
+    {
+        BasicTextOverlay? overlay = View?.Overlay as BasicTextOverlay;
+        if (overlay is null) return;
+
+        // Update overlay colors
+        overlay.BackgroundColor = Color.FromArgb(180, Properties.Settings.Default.AccentColor);
+        overlay.TextColor = UtilsClass.BlackOrWhite(overlay.BackgroundColor);
+
+        // Update overlay text
+        switch (CurrentGameState)
+        {
+            case MinesweeperGameEnums.GameState.Stopped:
+                overlay.Text = LanguageController.CurrentLanguageResource.OverlayGameStopped;
+                overlay.Enabled = true;
+                break;
+            case MinesweeperGameEnums.GameState.Paused:
+                overlay.Text = LanguageController.CurrentLanguageResource.OverlayGamePaused;
+                overlay.Enabled = true;
+                break;
+            default:
+                overlay.Enabled = false;
+                break;
+        }
     }
 
     /// <summary>
@@ -275,6 +343,7 @@ public class MinesweeperBoardController
         View?.UpdateComponents();
         View?.Invalidate();
         ComponentUpdated?.Invoke(this, EventArgs.Empty);
+        UpdateOverlay();
 
         CheckWonLost();
     }

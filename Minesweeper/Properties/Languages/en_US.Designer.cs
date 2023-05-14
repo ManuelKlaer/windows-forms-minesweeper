@@ -530,6 +530,24 @@ namespace Minesweeper.Properties.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Game paused.
+        /// </summary>
+        internal static string OverlayGamePaused {
+            get {
+                return ResourceManager.GetString("OverlayGamePaused", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Click to begin.
+        /// </summary>
+        internal static string OverlayGameStopped {
+            get {
+                return ResourceManager.GetString("OverlayGameStopped", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Beginner.
         /// </summary>
         internal static string PresetBeginner {

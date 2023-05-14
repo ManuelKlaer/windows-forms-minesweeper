@@ -274,6 +274,12 @@
   <data name="MenuTutorial" xml:space="preserve">
     <value>Tutorial</value>
   </data>
+  <data name="OverlayGamePaused" xml:space="preserve">
+    <value>Game paused</value>
+  </data>
+  <data name="OverlayGameStopped" xml:space="preserve">
+    <value>Click to begin</value>
+  </data>
   <data name="PresetBeginner" xml:space="preserve">
     <value>Beginner</value>
   </data>

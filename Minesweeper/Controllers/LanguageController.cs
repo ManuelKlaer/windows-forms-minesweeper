@@ -125,6 +125,8 @@ public class LanguageResource
     public string EmojiPlay => _resourceManager.GetString("EmojiPlay")!;
     public string EmojiPause => _resourceManager.GetString("EmojiPause")!;
     public string EmojiStop => _resourceManager.GetString("EmojiStop")!;
+    public string OverlayGameStopped => _resourceManager.GetString("OverlayGameStopped")!;
+    public string OverlayGamePaused => _resourceManager.GetString("OverlayGamePaused")!;
     public string GameWon => _resourceManager.GetString("GameWon")!;
     public string GameLost => _resourceManager.GetString("GameLost")!;
     public string MenuGame => _resourceManager.GetString("MenuGame")!;
