@@ -1,4 +1,5 @@
 using Minesweeper.Controllers;
+using System.Runtime;
 
 namespace Minesweeper;
 
@@ -13,7 +14,7 @@ internal static class Program
     [STAThread]
     private static void Main()
     {
-        // Handle unhandled exceptions
+        // Handle all unhandled exceptions
         try
         {
             Run();
@@ -30,6 +31,24 @@ internal static class Program
     /// </summary>
     private static void Run()
     {
+        // Show a notification when this application may be installed as an .appx application
+        if (!ApplicationInfo.IsAppxPackage && ApplicationInfo.MaybeAppxPackage)
+        {
+            MessageBox.Show("The application is located in a 'WindowsApps' folder, but it couldn't be determined if it is an .appx application.", "Installation type", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        // Create storage directory if it doesn't exist
+        if (!Directory.Exists(ApplicationInfo.StorageLocation))
+            Directory.CreateDirectory(ApplicationInfo.StorageLocation);
+
+        // Change current working directory to storage location
+        Directory.SetCurrentDirectory(ApplicationInfo.StorageLocation);
+
+        // Configure Startup Profile to improve startup performance
+        // https://blogs.msdn.microsoft.com/dotnet/2012/10/18/an-easy-solution-for-improving-app-launch-performance/
+        ProfileOptimization.SetProfileRoot(ApplicationInfo.StorageLocation);
+        ProfileOptimization.StartProfile("minesweeper.profile");
+
         // To customize application configuration such as set high DPI settings or default font,
         // see https://aka.ms/applicationconfiguration.
         ApplicationConfiguration.Initialize();
