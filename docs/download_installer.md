@@ -2,7 +2,7 @@
 
 Follow the steps below to install Minesweeper as a desktop application using the installer:
 
-1. Download the latest `.appxbunde` and `.cer` files from the [release section](https://github.com/ManuelKlaer/windows-forms-minesweeper/releases/latest).
+1. Download the latest `.appxbundle` and `.cer` files from the [release section](https://github.com/ManuelKlaer/windows-forms-minesweeper/releases/latest).
 2. Begin the installation process by double-clicking the `.cer` file to install the certificate.
 3. Click on "Install Certificate" to proceed.
 4. In the Certificate Import Wizard, select "Local Machine" and click "Next".
