@@ -206,7 +206,7 @@ namespace Minesweeper.Properties.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Endergebniss.
+        ///   Looks up a localized string similar to Endergebnis.
         /// </summary>
         internal static string AppTitleEndResult {
             get {
