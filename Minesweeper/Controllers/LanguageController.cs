@@ -111,6 +111,8 @@ public class LanguageResource
     public string AppConfirmNewGameText => _resourceManager.GetString("AppConfirmNewGameText")!;
     public string AppConfirmExitTitle => _resourceManager.GetString("AppConfirmExitTitle")!;
     public string AppConfirmExitText => _resourceManager.GetString("AppConfirmExitText")!;
+    public string AppUpdateTitle => _resourceManager.GetString("AppUpdateTitle")!;
+    public string AppUpdateText => _resourceManager.GetString("AppUpdateText")!;
     public string EmojiBomb => _resourceManager.GetString("EmojiBomb")!;
     public string EmojiFlag => _resourceManager.GetString("EmojiFlag")!;
     public string EmojiQuestion => _resourceManager.GetString("EmojiQuestion")!;

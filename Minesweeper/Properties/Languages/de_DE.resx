@@ -181,6 +181,18 @@
   <data name="AppTitleWelcome" xml:space="preserve">
     <value>Willkommen zu {0}</value>
   </data>
+  <data name="AppUpdateText" xml:space="preserve">
+    <value>Eine neue Version steht zum Download bereit.
+
+---
+{0}
+---
+
+Jetzt installieren?</value>
+  </data>
+  <data name="AppUpdateTitle" xml:space="preserve">
+    <value>Update verfügbar</value>
+  </data>
   <data name="AppVersion" xml:space="preserve">
     <value>Version: {0}</value>
   </data>

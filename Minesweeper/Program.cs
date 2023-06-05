@@ -1,4 +1,5 @@
 using Minesweeper.Controllers;
+using Minesweeper.Models;
 using System.Runtime;
 
 namespace Minesweeper;
@@ -31,6 +32,20 @@ internal static class Program
     /// </summary>
     private static void Run()
     {
+        // Get command line arguments
+        string[] args = Environment.GetCommandLineArgs();
+
+        // Check if this application was launched with the "--update" argument
+        if (args.Length > 1 && args[1] == "--update")
+        {
+            // Apply the update package
+            UpdateController.ApplyUpdatePackage(Path.Join(Directory.GetCurrentDirectory(), "Minesweeper.zip"), Path.Join(Directory.GetCurrentDirectory(), ".."));
+        }
+
+        // Cleanup unused update directory
+        if (Directory.Exists(Path.Join(ApplicationInfo.StorageLocation, "tmp_update")))
+            Directory.Delete(Path.Join(ApplicationInfo.StorageLocation, "tmp_update"), true);
+
         // Show a notification when this application may be installed as an .appx application
         if (!ApplicationInfo.IsAppxPackage && ApplicationInfo.MaybeAppxPackage)
         {
@@ -63,6 +78,25 @@ internal static class Program
 
         // Apply user selected language
         LanguageController.SetLanguage(Properties.Settings.Default.Language);
+
+        // Check for new updates using the GitHub api
+        try
+        {
+            UpdateModel update = UpdateController.CheckForUpdate();
+
+            if (update.IsNewerVersion())
+            {
+                DialogResult res = MessageBox.Show(
+                        string.Format(LanguageController.CurrentLanguageResource.AppUpdateText, update.Body),
+                        LanguageController.CurrentLanguageResource.AppUpdateTitle, MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Information);
+                if (res == DialogResult.Yes) UpdateController.InstallUpdate(update);
+            }
+        }
+        catch (Exception)
+        {
+            // ignored, because no internet is available
+        }
 
         // Run application
         Application.Run(new Minesweeper());

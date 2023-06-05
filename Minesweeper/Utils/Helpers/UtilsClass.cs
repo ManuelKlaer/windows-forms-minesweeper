@@ -42,6 +42,17 @@ public static class UtilsClass
     }
 
     /// <summary>
+    ///     Convert a version string into separate version numbers.
+    /// </summary>
+    /// <param name="version">The version string to convert.</param>
+    /// <returns>The version as separate version numbers.</returns>
+    public static (int major, int minor, int patch) GetVersion(string version)
+    {
+        string[] versionSplit = version.Replace("v", "").Split('.');
+        return (int.Parse(versionSplit[0]), int.Parse(versionSplit[1]), int.Parse(versionSplit[2]));
+    }
+
+    /// <summary>
     ///     Convert a <see cref="Color" /> to the hex format.
     /// </summary>
     /// <param name="c">The color to convert,</param>

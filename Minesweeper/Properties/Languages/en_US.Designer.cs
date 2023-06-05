@@ -251,6 +251,30 @@ namespace Minesweeper.Properties.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A new update is availabe to install.
+        ///
+        ///---
+        ///{0}
+        ///---
+        ///
+        ///Install now?.
+        /// </summary>
+        internal static string AppUpdateText {
+            get {
+                return ResourceManager.GetString("AppUpdateText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update available.
+        /// </summary>
+        internal static string AppUpdateTitle {
+            get {
+                return ResourceManager.GetString("AppUpdateTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Version: {0}.
         /// </summary>
         internal static string AppVersion {
