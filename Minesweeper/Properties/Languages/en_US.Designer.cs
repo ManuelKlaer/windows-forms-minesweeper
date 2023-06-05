@@ -251,7 +251,7 @@ namespace Minesweeper.Properties.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A new update is availabe to install.
+        ///   Looks up a localized string similar to A new update is available to install.
         ///
         ///---
         ///{0}

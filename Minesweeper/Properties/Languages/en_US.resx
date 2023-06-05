@@ -182,7 +182,7 @@
     <value>Welcome to {0}</value>
   </data>
   <data name="AppUpdateText" xml:space="preserve">
-    <value>A new update is availabe to install.
+    <value>A new update is available to install.
 
 ---
 {0}
